@@ -14,22 +14,22 @@ end
 DataMapper.finalize
 Dog.auto_upgrade!
 
-# #display the name and breed and weight of every dog
-# get '/dogs' do
+#display the name and breed and weight of every dog
+get '/dogs' do
 
-# end
+end
 
-# #create a new dog
-# post '/dogs' do
+#create a new dog
+post '/dogs' do
 
-# end
+end
 
-# #update an existing dog, given its id and new information
-# patch '/dogs' do
+#update an existing dog, given its id and new information
+patch '/dogs' do
 
-# end
+end
 
-# #delete a dog, given its id
-# delete '/dogs' do
+#delete a dog, given its id
+delete '/dogs' do
 
-# end
+end

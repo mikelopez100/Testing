@@ -1,4 +1,4 @@
-# Hello World Sinatra HW
+# Sinatra Kennel HW
 
 
 ## Instructions
@@ -6,21 +6,29 @@
 
 1. Clone.
 
-2. Run tests with: `rspec spec/part1_spec.rb`
+2. Run `bundle install`
 
-3. Make the `http://localhost:4567/` url say `Hello World`
+3. Finish Part 1 and Part 2
 
-4. Make the `http://localhost:4567/?name=Eric` url say `Hello Eric`
-
-5. Notice the route `get '/ask_name'` it is supposed to be a url that shows a form that lets you type your name in the box so the app can tell you hello. Only problem is the template it uses was never finished. Modify the  `views/ask_name.erb` template to have a form where the:
-
-   1. form action attribute is set to "/"
-   2. form has a textbox with an attribute name of "name"
-   3. form has a submit button
-
-6. Verify that you did this correctly by submitting the form. It should say hello to whatever you put in the box. (Make sure you restart the server to reload new changes)
-
-7. Commit all changes and push to Github
+4. Commit all changes and push to Github
 
    ​
+
+
+### Part 1 Instructions
+
+
+1. Make requests to GET `/dogs` display a line for each dog in the database with the following format: `id: name - breed - weight`
+2. Make requests to POST `/dogs` create a new dog where the name, breed, and weight of the dog to be created are grabbed from parameters `name`, `breed`, and `weight` respectively.
+3. Make requests to PATCH `/dogs` update the information for an existing dog, when given new information (from the parameters) and the id of the dog to update (from the parameters).
+4. Make requests to DELETE `/dogs` delete an existing dog from the database (if it exists) when given the id of the dog to delete.
+5. Run tests with: `bundle exec rspec spec/part1_spec.rb`
+
+### Part 2 Instructions
+
+1. Make sure POST requests to `/dogs` don't make a new dog unless the name, breed, and weight parameters are all set.
+2. Make sure PATCH requests to `/dogs` work as long as the parameter `id` is provided and at least one other parameter (name, breed, or weight).
+3. Make sure DELETE requests to `/dogs` don't delete anything if the parameter `id` is not specified or the dog is not found in the database.
+4. Run tests with: `bundle exec rspec spec/part2_spec.rb`
+
 
