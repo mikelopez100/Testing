@@ -16,7 +16,7 @@ end
 # For RSpec 2.x and 3.x
 RSpec.configure do |c|
 	c.include RSpecMixin 
-	DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/dog_test.db")
+	DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog_test.db")
   	DataMapper.finalize
-  	Dog.auto_migrate!
+  	Post.auto_migrate!
 end

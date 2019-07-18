@@ -1,4 +1,4 @@
-# Sinatra Kennel HW
+# Sinatra Blog API HW
 
 
 ## Instructions
@@ -8,27 +8,32 @@
 
 2. Run `bundle install`
 
-3. Finish Part 1 and Part 2
+3. Make sure you complete objectives by testing on Postman
+
+4. Make sure you pass all tests
 
 4. Commit all changes and push to Github
 
    ​
 
 
-### Part 1 Instructions
+### Part 1 - Local
 
 
-1. Make requests to GET `/dogs` display a line for each dog in the database with the following format: `id: name - breed - weight`
-2. Make requests to POST `/dogs` create a new dog where the name, breed, and weight of the dog to be created are grabbed from parameters `name`, `breed`, and `weight` respectively.
-3. Make requests to PATCH `/dogs` update the information for an existing dog, when given new information (from the parameters) and the id of the dog to update (from the parameters).
-4. Make requests to DELETE `/dogs` delete an existing dog from the database (if it exists) when given the id of the dog to delete.
-5. Run tests with: `bundle exec rspec spec/part1_spec.rb`
-
-### Part 2 Instructions
-
-1. Make sure POST requests to `/dogs` don't make a new dog unless the name, breed, and weight parameters are all set.
-2. Make sure PATCH requests to `/dogs` work as long as the parameter `id` is provided and at least one other parameter (name, breed, or weight).
-3. Make sure DELETE requests to `/dogs` don't delete anything if the parameter `id` is not specified or the dog is not found in the database.
-4. Run tests with: `bundle exec rspec spec/part2_spec.rb`
+1. Make requests to GET `/posts` display JSON representing all posts in the database
+2. Make requests to POST `/posts` create a new post where the title and body of the post to be created are grabbed from parameters `title` and `body`, respectively.
+3. Make requests to PATCH `/posts` update the information for an existing post, when given new information (from the parameters) and the id of the post to update (from the parameters).
+4. Make requests to DELETE `/posts` delete an existing post from the database (if it exists) when given the id of the post to delete.
+5. Run tests with: `bundle exec rspec spec/posts_spec.rb`
+6. Deploy to Heroku
 
 
+
+### Part 2 - Deploying to Heroku
+
+1. Add all your changes on git and make a commit: `git add .` + `git commit -m "Finished"`
+2. Create a Heroku server: `heroku create`
+3. Create a database for your server: `heroku addons:create heroku-postgresql:hobby-dev`
+4. Push the code to Heroku: `git push heroku master`
+5. I preconfigured the necessary files for this to work.
+6. Verify all is working and submit your links (github and heroku) to me.
