@@ -34,6 +34,7 @@ end
 describe "My application" do
     before(:all) do
         @post = Post.new(title: "MyTitle", body: "MyContent")
+        @post.save
     end
 
     it "should get index" do

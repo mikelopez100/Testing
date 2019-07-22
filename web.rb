@@ -22,10 +22,6 @@ DataMapper.finalize
 Post.auto_upgrade!
 
 #display the title and body of every post as JSON
-get '/posts' do
-		halt 200, Post.all.to_json
-end
-
 get "/posts/:id" do
 	p = Post.get(params["id"])
 	if !p.nil?
@@ -33,6 +29,7 @@ get "/posts/:id" do
 	else
 		halt 404, {"message" => "Post not found."}.to_json
 	end
+
 end
 
 #create a new posts
@@ -50,14 +47,14 @@ end
 #update an existing post, given its id and new information
 patch '/posts/:id' do
 
-	post = Post.get(params["id"])
+	p = Post.get(params["id"])
 	if !p.nil?
 	uTitle = params["title"]
 	uBody = params["body"]
-	post.title = uTitle
-	post.body = uBody
-	post.save
-	halt 200, post.to_json
+	p.title = uTitle
+	p.body = uBody
+	p.save
+	halt 200, p.to_json
 
 else
 	halt 404, {"message" => "Post not found."}.to_json
