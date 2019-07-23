@@ -23,6 +23,7 @@ Post.auto_upgrade!
 
 #display the title and body of every post as JSON
 get "/posts/:id" do
+
 	p = Post.get(params["id"])
 	if !p.nil?
 		halt 200, p.to_json
@@ -34,6 +35,7 @@ end
 
 #create a new posts
 post '/posts' do
+	puts "reached me"
 	title = params["title"]
 	body = params["body"]
 	newPost = Post.new
